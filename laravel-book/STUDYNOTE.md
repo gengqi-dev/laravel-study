@@ -204,6 +204,49 @@
     php artisan make:controller [ControllerName]
     ```
 
+    7.2 Default generated controller
+    ```php
+    <?php
+
+    namespace App\Http\Controllers;
+
+    use Illuminate\Http\Request;
+
+    class TasksController extends Controller{
+
+    }
+    ```
+    7.3 Add method to the controller
+
+    ```php
+    //Example 3-22
+    <?php
+    namespace App\Http\Controller
+
+    use Illuminate\Http\Request
+
+    class TasksController extends Controller{
+
+        public function index(){
+            return 'Hello, World!';
+        }
+    }
+
+    Example 3-23
+    //route/web.php
+    <?php
+    Route::get('/', 'TasksController@index');
+    ```
+
+    7.4 Autogenerate methods for resource route
+        
+    The controller will includes **index**, **create**, **store**, **show**, etc.
+
+        ```bash
+            php artisan make:controller TasksController --resource
+        ```
+    
+
     <!-- ************************************************************** -->
     <!-- 2023-02-24(Page 47- Page 56) -->
     <!-- ************************************************************** -->
